@@ -57,7 +57,8 @@ def analysis(path):
 
 def upload(project_path, db_name, version):
     user_m = '--upload-source ALL -U http://localhost:8080 --username admin --password admin '
-    cmd = 'qacli upload -P "' + project_path + '" -q --files code_list.txt --upload-project ' + db_name + '--snapshot' \
+    list_path = '"' + project_path + '\\code_list.txt"'
+    cmd = 'qacli upload -P "' + project_path + '" -q --files '+list_path+' --upload-project ' + db_name + ' --snapshot' \
                                                                                                           '-name ' + \
           version + user_m
     os.system(cmd)
