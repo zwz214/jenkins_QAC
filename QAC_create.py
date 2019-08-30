@@ -51,8 +51,8 @@ def configure():
 
 
 def analysis():
-    cmd = 'qacli analyze -P . -c'
-    cmd1 = 'qacli analyze -P . --file-based-analysis'  # test
+    cmd = 'qacli admin --set-license-server 5055@localhost'
+    cmd1 = 'qacli analyze -P . -c --file-based-analysis'  # test
     os.system(cmd)
     os.system(cmd1)
 
@@ -67,12 +67,12 @@ def upload(project_path, db_name, version):
 
 
 if __name__ == "__main__":
-    # project = os.path.abspath('.')  # 指定工程路径
-    # cct_name = r'\Helix_Generic_C.cct'
-    # if not os.path.exists(project + r'\prqaproject.xml'):
-    #     create(project, cct_name)
-    # find_code(project)
-    # include_path_list = find_header(project)
-    # add_files(project, include_path_list)
+    project = os.path.abspath('.')  # 指定工程路径
+    cct_name = r'\Helix_Generic_C.cct'
+    if not os.path.exists(project + r'\prqaproject.xml'):
+        create(project, cct_name)
+    find_code(project)
+    include_path_list = find_header(project)
+    add_files(project, include_path_list)
     analysis()
     # upload(project, 'Jenkins_addfile', '1.4 ')  # 版本号后有空格
