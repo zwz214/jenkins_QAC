@@ -51,7 +51,7 @@ def configure():
 
 
 def analysis(path):
-    cmd = 'qacli analyze -P "' + path + '" -c --file-based-analysis'
+    cmd = 'qacli analyze -P . -c --file-based-analysis'
     cmd1 = 'qacli view -P "' + path + '" -m STDOUT'
     os.system(cmd)
     os.system(cmd1)
@@ -60,7 +60,7 @@ def analysis(path):
 def upload(project_path, db_name, version):
     user_m = '--upload-source ALL -U http://localhost:8080 --username admin --password admin '
     list_path = '"' + project_path + '\\code_list.txt"'
-    cmd = 'qacli upload -P "' + project_path + '" -q --files ' + list_path + ' --upload-project ' + db_name + ' --snapshot' \
+    cmd = 'qacli upload -P "' + project_path + '" -q --files ' + list_path + ' --upload-project ' + db_name + '--snapshot' \ 
                                                                                                               '-name ' + \
           version + user_m
     os.system(cmd)
