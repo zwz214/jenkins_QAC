@@ -75,4 +75,4 @@ if __name__ == "__main__":
     include_path_list = find_header(project)
     add_files(project, include_path_list)
     analysis()
-    # upload(project, 'Jenkins_addfile', '1.4 ')  # 版本号后有空格
+    upload(project, 'Jenkins_addfile', '1.4 ')  # 版本号后有空格
