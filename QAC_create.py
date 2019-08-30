@@ -60,19 +60,19 @@ def analysis():
 def upload(project_path, db_name, version):
     user_m = '--upload-source ALL -U http://localhost:8080 --username admin --password admin '
     list_path = '"' + project_path + '\\code_list.txt"'
-    cmd = 'qacli upload -P "' + project_path + '" -q --files ' + list_path + ' --upload-project ' + db_name + '--snapshot' \
+    cmd = 'qacli upload -P "' + project_path + '" -q --files ' + list_path + ' --upload-project ' + db_name + ' --snapshot' \
                                                                                                               '-name ' + \
           version + user_m
     os.system(cmd)
 
 
 if __name__ == "__main__":
-    project = os.path.abspath('.')  # 指定工程路径
-    cct_name = r'\Helix_Generic_C.cct'
-    if not os.path.exists(project + r'\prqaproject.xml'):
-        create(project, cct_name)
-    find_code(project)
-    include_path_list = find_header(project)
-    add_files(project, include_path_list)
+    # project = os.path.abspath('.')  # 指定工程路径
+    # cct_name = r'\Helix_Generic_C.cct'
+    # if not os.path.exists(project + r'\prqaproject.xml'):
+    #     create(project, cct_name)
+    # find_code(project)
+    # include_path_list = find_header(project)
+    # add_files(project, include_path_list)
     analysis()
-    upload(project, 'Jenkins_addfile', '1.4 ')  # 版本号后有空格
+    # upload(project, 'Jenkins_addfile', '1.4 ')  # 版本号后有空格
