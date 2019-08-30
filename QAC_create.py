@@ -42,7 +42,7 @@ def add_files(project_path, path):
         acf_list = f.read()
         for inc in path:
             if inc not in acf_list:
-                cmd2 = 'qacli pprops -c qac-9.6.0 -o i --set ' + inc + ' -P "' + project_path+'"'
+                cmd2 = 'qacli pprops -c qac-9.6.0 -o i --set ' + inc + ' -P "' + project_path + '"'
                 os.system(cmd2)
 
 
@@ -70,4 +70,4 @@ if __name__ == "__main__":
     include_path_list = find_header(project)
     add_files(project, include_path_list)
     analysis(project)
-    upload(project, 'Jenkins_addfile', '1.3 ')
+    upload(project, 'Jenkins_addfile', '1.3 ')  # 版本号后有空格

@@ -7,7 +7,7 @@ int main(void)
   input_stu();
   aver_stu();
   aver_cour();
-  (void)printf("\n  NO.     cour1   cour2   cour3   cour4   cour5   aver\n");   //PRQA S 5124 EOF
+  (void)printf("\n  NO.     cour1   cour2   cour3   cour4   cour5   aver\n");   
   for(i=0;i<N;i++)
   {
     (void)printf("\n NO %2d ",i+1);
