@@ -52,14 +52,16 @@ def configure():
 
 def analysis(path):
     cmd = 'qacli analyze -P "' + path + '" -c --file-based-analysis'
+    cmd1 = 'qacli view -P "' + path + '" -m STDOUT'
     os.system(cmd)
+    os.system(cmd1)
 
 
 def upload(project_path, db_name, version):
     user_m = '--upload-source ALL -U http://localhost:8080 --username admin --password admin '
     list_path = '"' + project_path + '\\code_list.txt"'
-    cmd = 'qacli upload -P "' + project_path + '" -q --files '+list_path+' --upload-project ' + db_name + ' --snapshot' \
-                                                                                                          '-name ' + \
+    cmd = 'qacli upload -P "' + project_path + '" -q --files ' + list_path + ' --upload-project ' + db_name + ' --snapshot' \
+                                                                                                              '-name ' + \
           version + user_m
     os.system(cmd)
 
@@ -73,4 +75,4 @@ if __name__ == "__main__":
     include_path_list = find_header(project)
     add_files(project, include_path_list)
     analysis(project)
-    upload(project, 'Jenkins_addfile', '1.3 ')  # 版本号后有空格
+    upload(project, 'Jenkins_addfile', '1.4 ')  # 版本号后有空格
