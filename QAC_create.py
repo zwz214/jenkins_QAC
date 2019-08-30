@@ -50,9 +50,9 @@ def configure():
     pass
 
 
-def analysis(path):
-    cmd = 'qacli analyze -P . --file-based-analysis'  # test
-    cmd1 = 'qacli view -P "' + path + '" -m STDOUT'
+def analysis():
+    cmd = 'qacli analyze -P . -c'
+    cmd1 = 'qacli analyze -P . --file-based-analysis'  # test
     os.system(cmd)
     os.system(cmd1)
 
@@ -74,5 +74,5 @@ if __name__ == "__main__":
     find_code(project)
     include_path_list = find_header(project)
     add_files(project, include_path_list)
-    analysis(project)
+    analysis()
     upload(project, 'Jenkins_addfile', '1.4 ')  # 版本号后有空格
