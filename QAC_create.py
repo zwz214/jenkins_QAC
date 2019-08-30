@@ -16,7 +16,7 @@ def find_code(project_path):
         for filename in files:
             if filename.endswith('.c') | filename.endswith('.cpp') | filename.endswith('.cc'):
                 code_list.append(os.path.join(home) + '\\' + filename)
-    with open(project_path + './code_list.txt', 'w') as f:  # 将源文件路径输出到code_list.txt文件中
+    with open(project_path + '\\code_list.txt', 'w') as f:  # 将源文件路径输出到code_list.txt文件中
         for list_mem in code_list:
             f.write('"' + list_mem + '"\n')
 
