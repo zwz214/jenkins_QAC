@@ -51,7 +51,7 @@ def configure():
 
 
 def analysis(path):
-    cmd = 'qacli analyze -P . -c --file-based-analysis'
+    cmd = 'qacli analyze -P . --file-based-analysis'
     cmd1 = 'qacli view -P "' + path + '" -m STDOUT'
     os.system(cmd)
     os.system(cmd1)
