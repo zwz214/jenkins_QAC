@@ -48,13 +48,13 @@ def add_files(project_path, path):
 
 
 def configure(component):
+    cmd = 'qacli admin --set-license-server 5055@localhost'
     # 添加分析模块，eg:qac-9.6.0 qacpp-4.4.0 rcma-2.2.0 m2cm-3.3.7 m3cm-2.3.6 mcpp-1.5.5 mcppx-1.4.8 
     cmd = 'qacli pprops -c ' + component + ' --add -T C -P .'
     os.system(cmd)
 
 
 def analysis():
-    cmd = 'qacli admin --set-license-server 5055@localhost'
     cmd1 = 'qacli analyze -P . -c --file-based-analysis'  # test
     os.system(cmd)
     os.system(cmd1)
@@ -80,4 +80,4 @@ if __name__ == "__main__":
     configure('rcma-2.2.0')
     configure('m3cm-3.3.7')
     analysis()
-    upload(project, 'Jenkins_addfile', '1.6')
+    upload(project, 'Jenkins_addfile', '1.7')
