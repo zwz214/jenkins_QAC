@@ -77,5 +77,7 @@ if __name__ == "__main__":
     find_code(project)
     include_path_list = find_header(project)
     add_files(project, include_path_list)
+    configure('rcma-2.2.0')
+    configure('m3cm-3.3.7')
     analysis()
-    upload(project, 'Jenkins_addfile', '1.4')
+    upload(project, 'Jenkins_addfile', '1.6')
