@@ -103,6 +103,6 @@ if __name__ == "__main__":
     #delete_svn(project)
     analysis()  # 执行QAC分析
     version = db_version.calculate(project, change_version)  # 读取之前dashboard工程辨别编号，如何是第一次上传会将版本编号指定为1.0
-    f = upload(project, 'hello_auto', version)  # 将结果上传到dashboard
+    f = upload(project, 'hello_moto', version)  # 将结果上传到dashboard
     if f:  # 判断QAC是否成功将结果上传到dashboard
         db_version.write(project, version)  # 将当前dashboard版本编号写入version.txt中
