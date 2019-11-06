@@ -100,7 +100,7 @@ if __name__ == "__main__":
     find_code(project)  # 检索当前工作目录下是否新增了源文件，并添加源文件到QAC工作
     include_path_list = find_header(project)  # 检索当前工作目录下是否新增了头文件
     add_files(project, include_path_list)  # 添加头文件到QAC工程中
-    delete_svn(project)
+    #delete_svn(project)
     analysis()  # 执行QAC分析
     version = db_version.calculate(project, change_version)  # 读取之前dashboard工程辨别编号，如何是第一次上传会将版本编号指定为1.0
     f = upload(project, 'hello_auto', version)  # 将结果上传到dashboard
